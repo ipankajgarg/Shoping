@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../angularjs/libs/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+    <style>
+        #sell li{
+            display: inline-block;
+                padding: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+   <div ng-controller="myctrl">
+       <ul id="sell">
+           <li ng-repeat="i in data" >
+               <a href="https://{{i.link}}">{{i.name}}</a>
+           </li>
+       </ul>
+       <div>
+           <ul>
+               <li ng-repeat="i in choice" >
+                      <a href="#" ng-click="show1(i)" >{{i.name}}</a>
+                      
+               </li>
+           </ul>
+           
+       </div>
+       <br>
+       <input type="text" ng-model="search">
+       <select ng-model="sort">
+           <option >price</option>
+       </select>
+
+       <div>
+           <ul>
+               <li ng-repeat="i in item|filter:search|orderBy:sort">
+                  <img src="{{i.img}}">
+                  <br>
+                      <span>{{i.brand}}</span>
+                      <br>
+                      <span>{{i.price}}</span>
+                  
+               </li>
+           </ul>
+       </div>
+
+   </div>
+    
+</body>
+</html>
