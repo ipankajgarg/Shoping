@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bigbazar.css">
+    <link rel="stylesheet" href="assets/css/kfc.css">
+     <link rel="stylesheet" href="assets/css/font-awesome.css">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        
+<script src="bootstrap/js/bootstrap.min.js"></script>
+    
+     <script src="libs/angular.min.js"></script>
+     <script src="libs/angular-route.min.js"></script>
+     <script src="js/module.js"></script>
+     <script src="js/factory.js"></script>
+     <script src="js/controller.js"></script>
+     <script src="js/bigbazarcontroller.js"></script>
+     <script src="js/kfccontroller.js"></script>
+     <script src="route/spa-route.js"></script>
+     
+
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+   <div id="container">
+       <header id="header">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-2">
+                       <div class="logo">
+                           <img src="images/logo.png" alt="image">
+                           
+                       </div>
+                       
+                   </div>
+                   <div class="col-lg-2">
+                           <div class="name">
+                        <span>halanx</span>
+                           </div>
+                       </div>
+                       <div class="col-lg-1 offset-lg-7">
+                           <div class="logout_btn">
+                               <a href="">logout</a>
+                           </div>
+                       </div>
+
+               </div>
+           </div>
+       </header>
+       <div id="content">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-2">
+                       <div class="nav-button">
+                           <span ng-click="addsidebar()">
+                               <i class="fa fa-bars" aria-hidden="true"></i>
+                         </span>
+                       </div>
+                       <div class="userlist" ng-class={"move":movex}>
+                        <ul>
+                            <li><a href="">my accounts</a></li>
+                            <li><a href="">payments</a></li>
+                            <li><a href="">my orders</a></li>
+                            <li><a href="">favourites</a></li>
+                            <li><a href="">points</a></li>
+                            <li><a href="">notification</a></li>
+                            <li><a href="">express</a></li>
+                        </ul>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 ">
+                       <div class="delivery-option">
+                           <ul>
+                              <li><a href="#">delivery location-</a></li>
+                              <li><a href="" ng-click="addstore()">shopping in-</a>
+                                <div class="storelist" ng-class={"show":showclass}>
+                                  <ul>
+                                      <li><a ng-href="#/bigbazar">bigbazar</a></li>
+                                      <li><a ng-href="#/kfc">kfc</a></li>
+                                      
+                                  </ul>
+<!--
+                              </div>
+                                </div>
+-->
+                              </div>
+                              </li>
+                              <li><a href="">for-</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="col-lg-1 offset-lg-5" >
+                       <div class="cart-icon">
+                          <a href="#">
+                           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-11 offset-lg-1">
+                       <ng-view>
+                           
+                       </ng-view>
+                   </div>
+               </div>
+
+
+<!--
+               <div class="row">
+                   <div class="col-lg-12">
+                       <div class="bazar-image">
+                           <img src="images/big-bazar.jpg" alt="">
+                       </div>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="col-lg-10 offset-lg-2">
+                       <div class="product_section">
+                           <span>products</span>
+                           <ul>
+                               <li ng-repeat="product in bigbazar">
+                                  <div class="productinfo">
+                                  <div class="productimage">
+                                  <a href=""> <img ng-src="{{product.ProductImage}}" alt=""></a>
+                                   </div>
+                                   <div class="addbutton">
+                                       <button>add to cart</button>
+                                   </div>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+-->
+
+           </div>
+       </div>
+   </div>
+   
+    
+</body>
+</html>

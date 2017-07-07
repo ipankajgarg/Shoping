@@ -1,0 +1,41 @@
+#content .bigbazarlogo{
+    width: 30%;
+    margin-left: 30%;
+}
+#content .bigbazarlogo img{
+    width: 100%;
+}
+
+#content .bigbazarsection li .productimage{
+    width: 70%;
+    
+    
+}
+#content .bigbazarsection span{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+
+#content .bigbazarsection .addbutton button{
+        background-color: #fb641b;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    margin-left: 20px;
+    
+    text-transform: uppercase;
+}
+
+#content .bigbazarsection li {
+    display: inline-block;
+    width: 25%;
+    padding: 20px 0px;
+
+    
+}
+
+#content .bigbazarsection li .productimage img{
+    width: 100%;
+}
