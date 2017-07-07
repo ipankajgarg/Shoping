@@ -1,0 +1,133 @@
+body{
+/*    overflow: hidden;*/
+    overflow-x: hidden;
+      background-color: rgb(245,245,245);
+}
+/*
+.logo {
+    width: 39%;
+}
+*/
+.logo img{
+    width: 39%;
+}
+#header{
+    background-color: white;
+}
+.logo span{
+    font-size: 34px;
+    color: red;
+    text-transform: capitalize;
+    font-weight: bold;
+    position: absolute;
+    left: 100px;
+    top: 10px
+}
+.login{
+    margin-top: 25px;
+    text-decoration: none;
+    font-weight: 700;
+}
+#content{
+    height: 544px;
+}
+#content h1{
+    font-size: 24px;
+    text-align: left;
+    margin-left: 11px;
+}
+#content .table{
+    border: 1px solid lightgrey;
+    text-align: center;
+        background-color: white;
+/*    margin: 50px 0px;*/
+    border-radius: 5px;
+    margin-left: -50px;
+        font-size: 14px;
+    padding: 0px 33px;
+    margin-top: 60px;
+    padding-top: 20px;
+    width: 25%;
+    margin-left: 36%;
+}
+#content .table input[type="text"]{
+        width: 94%;
+   border: 0px;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+    padding: 4px 14px;
+    font-size: 15px;
+        border-radius: 5px;
+    
+}
+#content .table input[type="submit"]{
+    margin: 30px 0px;
+    background-color: red;
+    color:white;
+    border: none;
+   
+    border-radius: 4px;
+       width: 93%;
+    height: 37px;
+}
+#content .email{
+  margin-right: 74px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/*
+#content .grey{
+        background-color: rgb(245,245,245);
+    height: 160%;
+}
+*/
+ .container-fluid{
+    padding: 0px;
+}
+/*
+#footer{
+    margin-top: 13.2%;
+}
+*/
+/*
+#footer .row:first-child{
+    background-color: darkgray;
+}
+*/
+#footer .infolist ul{
+    margin: 0px;
+}
+#footer .infolist{
+    background-color: darkgray; 
+}
+
+#footer .infolist li{
+    display: inline-block;
+    padding: 0px 70px;
+}
+/*
+#footer .col-sm-2{
+    text-align: center;
+}
+*/
+#footer a{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+#footer .row:nth-child(2){
+    background-color: black;
+}
+#footer .title span{
+    color: white;
+    text-transform: uppercase;
+}
+#footer .title{
+    text-align: center;
+}
+
+
+
