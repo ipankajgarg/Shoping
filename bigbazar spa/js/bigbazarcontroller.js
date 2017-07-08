@@ -11,4 +11,12 @@ app.controller("bigbazarctrl",function($scope,myfactory){
         
     }
                 )
+  $scope.total = (count,data)=>{
+      alert(count)
+      data.count =count;
+     console.log(data)
+     myfactory.cartproduct(data);
+   
+  }
+    
 })

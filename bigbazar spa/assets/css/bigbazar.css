@@ -39,3 +39,12 @@
 #content .bigbazarsection li .productimage img{
     width: 100%;
 }
+
+
+/*modal*/
+.modal-content .nextimage{
+    text-align: center;
+}
+#content .bigbazarsection li .modal-content .nextimage img{
+    width: 65%;
+}

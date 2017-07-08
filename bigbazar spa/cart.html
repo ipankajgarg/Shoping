@@ -1,0 +1,11 @@
+<div>
+   
+    <ul>
+        <li ng-repeat="items in cartproductlist track by $index">
+        <span>{{items.ProductName}}</span>
+           <span>{{items.id}}</span>
+           <span>{{items.count}}</span>
+            <img ng-src="{{items.ProductImage}}">
+        </li>
+    </ul>
+</div>

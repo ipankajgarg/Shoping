@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bigbazar.css">
     <link rel="stylesheet" href="assets/css/kfc.css">
      <link rel="stylesheet" href="assets/css/font-awesome.css">
-        <script src="js/jquery-3.2.1.min.js"></script>
-        
-<script src="bootstrap/js/bootstrap.min.js"></script>
+   
     
      <script src="libs/angular.min.js"></script>
      <script src="libs/angular-route.min.js"></script>
@@ -21,6 +25,7 @@
      <script src="js/controller.js"></script>
      <script src="js/bigbazarcontroller.js"></script>
      <script src="js/kfccontroller.js"></script>
+     <script src="js/cartcontroller.js"></script>
      <script src="route/spa-route.js"></script>
      
 
@@ -95,7 +100,7 @@
                    </div>
                    <div class="col-lg-1 offset-lg-5" >
                        <div class="cart-icon">
-                          <a href="#">
+                          <a ng-href="#/cart">
                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                            </a>
                        </div>
@@ -110,40 +115,5 @@
                </div>
 
 
-<!--
-               <div class="row">
-                   <div class="col-lg-12">
-                       <div class="bazar-image">
-                           <img src="images/big-bazar.jpg" alt="">
-                       </div>
-                   </div>
-               </div>
-
-               <div class="row">
-                   <div class="col-lg-10 offset-lg-2">
-                       <div class="product_section">
-                           <span>products</span>
-                           <ul>
-                               <li ng-repeat="product in bigbazar">
-                                  <div class="productinfo">
-                                  <div class="productimage">
-                                  <a href=""> <img ng-src="{{product.ProductImage}}" alt=""></a>
-                                   </div>
-                                   <div class="addbutton">
-                                       <button>add to cart</button>
-                                   </div>
-                                   </div>
-                               </li>
-                           </ul>
-                       </div>
-                   </div>
-               </div>
--->
-
-           </div>
-       </div>
-   </div>
-   
-    
-</body>
+           </body>
 </html>
