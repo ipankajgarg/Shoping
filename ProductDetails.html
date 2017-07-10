@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="jquery-3.2.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container-fluid {
+            background-color: white;
+        }
+        
+        .navbar-fixed-top {
+            position: fixed;
+        }
+        
+        .navbar-brand {
+            color: #e50000;
+            font-family: "Sans", Verdana, "sans-serif";
+            font-weight: bold;
+            font-size: 2.5em;
+        }
+        
+        .form-group {
+            width: 100%;
+        }
+        
+        body {
+            margin-top: 50px;
+            background: url(http://7bna.net/images/gradient-wallpaper/gradient-wallpaper-20.jpg);
+            background-repeat: repeat;
+            background-position: center;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+    
+    <script>
+    var app = angular.module("myapp",[]);
+        
+    app.controller("myctrl",($scope,myfactory)=>{
+      $scope.postproduct = ()=>{
+         alert("hello") 
+         var obj = {}
+         obj.productname = $scope.productname
+         obj.productimage = $scope.productimage
+         obj.productprice = $scope.productprice
+         obj.productdescription = $scope.productdescription
+         obj.availablestores = $scope.availablestores
+         obj.productsize = $scope.productsize
+         console.log(obj)
+         var promise = myfactory.callserver(obj)
+         promise.then((data)=>{
+				$scope.print = data
+			alert("success")
+           
+            console.log(data)
+			},(err)=>{
+				
+				alert("error")
+			})
+      }  
+    })
+    
+    app.factory("myfactory",($http,$q)=>{
+     var object = {
+         callserver : function(obj){
+             var pr = $q.defer();
+             var url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/products/"
+             console.log(obj)
+             $http.post(url,{obj})
+                 .then(function(data){
+                 pr.resolve(data.config.data.obj)
+             },
+                                     function(err){
+                 pr.reject(err)
+             })
+             return pr.promise
+         }
+         
+        
+     } 
+      return object
+    })
+    </script>
+</head>
+
+<body ng-app = "myapp" ng-controller="myctrl">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#"><img src="logo.png" alt="" width="60" height="60" id="logo"></a>
+                <a class="navbar-brand" href="index.php">Halanx</a>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <form class="form-horizontal" enctype="multipart/form-data"   method="post"  ng-submit= "postproduct()" >
+            <br>
+            <h1>Product Details</h1>
+            <div class="form-group"> <label class="control-label col-sm-2" for="ProductName">Product Name: </label>
+
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="ProductName" placeholder="Enter Name" ng-model = "productname">
+                </div>
+            </div>
+            <div class="form-group"> <label class="control-label col-sm-2">Upload Image of Product </label>
+
+                <div class="col-sm-7">
+                    <input type="file" class="form-control" name="ProductPic" accept="image/png" ng-model="productimage"> </div>
+            </div>
+            <div class="form-group"> <label class="control-label col-sm-2" for="ProductPrice">Product Price: </label>
+
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="ProductPrice" placeholder="Enter Price" ng-model="productprice">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="description">Product Description: </label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" id="description" ng-model = "productdescription"> 
+                </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="stores">Available in Stores: </label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" id="stores" ng-model="availablestores">
+                </textarea>
+                </div>
+            </div>
+            <div class="form-group"> <label class="control-label col-sm-2" for="ProductSize">Product Size: </label>
+
+                <div class="col-sm-7">
+                    <input type="number" min="1" max="5" class="form-control" id="ProductSize" ng-model="productsize">
+                </div>
+            </div>
+            <div style="text-align:center">
+                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+            </div>
+        </form>
+    </div>
+    <div>{{print}}</div>
+</body>
+</html>
