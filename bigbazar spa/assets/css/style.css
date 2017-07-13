@@ -8,21 +8,20 @@ body{
     z-index: 100;
 }
 #header .logo{
-    width: 70%;
+    width: 100%;
     
 }
 #header .logo img{
-    width: 100%;
+    width: 50%;
+        margin-top: -10px;
 }
-#header .name{
-        margin-top: 15px;
-    margin-left: -118px;
-}
-#header .name span{
+
+#header .logo span{
         text-transform: capitalize;
     color: red;
     font-weight: 900;
     font-size: 31px;
+    margin-left: -40px;
 }
 #header .logout_btn a{
    color: white;

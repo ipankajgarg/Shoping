@@ -6,8 +6,5 @@ app.config(function($routeProvider,$locationProvider){
     }).when("/kfc",{
         templateUrl : "kfc.html",
         controller : "kfcctrl"
-    }).when("/cart",{
-        templateUrl : "cart.html",
-        controller : "cartctrl"
-    }) .otherwise({template:"errorfound"});
+    }).otherwise({template:"errorfound"});
 })

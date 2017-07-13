@@ -1,4 +1,5 @@
-app.controller("bigbazarctrl",function($scope,myfactory){
+app.controller("bigbazarctrl",function($scope,myfactory,){
+
       promise = myfactory.bigbazarserver();
     promise.then(function(data){
         console.log(data)
@@ -11,12 +12,41 @@ app.controller("bigbazarctrl",function($scope,myfactory){
         
     }
                 )
-  $scope.total = (count,data)=>{
-      alert(count)
-      data.count =count;
-     console.log(data)
-     myfactory.cartproduct(data);
-   
+  
+  $scope.addmodal= (data)=>{
+      console.log(data)
+     
+      $scope.modal = data
+      $scope.name = data;
+     
   }
+  $scope.addtocart = ()=>{
+      
+
+       
+      console.log($scope.modal)
+      console.log($scope.count)
+
+     
+   var match =  myfactory.check($scope.modal)
+   
+       if(match.length==1){
+          alert("already present in cart")
+       }
+      
+     
+       
+   
+     else{
+       myfactory.cartitems($scope.modal,$scope.count)
+        Notification.requestPermission(function(){
+            var n = new Notification("Halanx", {
+                body : "ADDED TO CART",
+                icon : "images/success.png"
+            });
+           },2000);
+      }
+  }
+  
     
 })

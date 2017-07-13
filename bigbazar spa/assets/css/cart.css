@@ -1,0 +1,75 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    
+}
+#header{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+#header .logo{
+    width: 100%;
+    
+}
+#header .logo img{
+    width: 50%;
+        margin-top: -10px;
+}
+
+#header .logo span{
+        text-transform: capitalize;
+    color: red;
+    font-weight: 900;
+    font-size: 31px;
+    margin-left: -40px;
+}
+#header .logout_btn a{
+   color: white;
+    text-transform: capitalize;
+    background-color: 	rgb(255,69,0);
+    padding: 5px 13px;
+    border-radius: 6px; 
+    text-decoration: none;
+}
+#header .logout_btn{
+    margin-top: 20px
+}
+#content{
+    margin-top: 100px;
+}
+#content .myproducts li{
+    position: relative;
+    list-style: none;
+    margin: 20px 0px;
+        border: 1px solid lightgrey;
+    padding: 10px 10px;
+}
+#content .myproducts li .product .productimage{
+    width: 20%;
+}
+#content .myproducts li .product .productimage img{
+    width: 100%;
+}
+#content .myproducts li .product{
+    display: flex;
+}
+#content .myproducts li .product button{
+       border-radius: 10px;
+    border: none;
+    /* padding: 5px; */
+    font-size: 20px;
+    /* border: 1px solid lightgrey; */ 
+}
+#content .myproducts li .product button:focus{
+outline: none;
+    
+}
+#content .myproducts li .product .deleteimage{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+#content .myproducts li .productdescription{
+    margin-left: 20px;
+}

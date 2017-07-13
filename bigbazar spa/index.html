@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/bigbazar.css">
     <link rel="stylesheet" href="assets/css/kfc.css">
      <link rel="stylesheet" href="assets/css/font-awesome.css">
+     <link rel="stylesheet" href="assets/css/cart.css">
    
     
      <script src="libs/angular.min.js"></script>
@@ -35,19 +36,18 @@
        <header id="header">
            <div class="container-fluid">
                <div class="row">
-                   <div class="col-lg-2">
+                   <div class="col-lg-3">
                        <div class="logo">
-                           <img src="images/logo.png" alt="image">
+                           <img src="images/logo.png" alt="image" >
+                           <span>halanx</span>
                            
                        </div>
                        
                    </div>
-                   <div class="col-lg-2">
-                           <div class="name">
-                        <span>halanx</span>
-                           </div>
-                       </div>
-                       <div class="col-lg-1 offset-lg-7">
+<!--
+                  
+-->
+                       <div class="col-lg-1 offset-lg-8">
                            <div class="logout_btn">
                                <a href="">logout</a>
                            </div>
@@ -100,9 +100,11 @@
                    </div>
                    <div class="col-lg-1 offset-lg-5" >
                        <div class="cart-icon">
-                          <a ng-href="#/cart">
+                          <a href="cart.html">
                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
                            </a>
+                           
                        </div>
                    </div>
                </div>

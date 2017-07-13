@@ -4,27 +4,41 @@
 </div>
 <div class="bigbazarsection">
    <span>products</span>
-    <div class="productimage">
+    <div class="productbigbazar">
         <ul>
-            <li ng-repeat="data in bigbazardata">
+            <li ng-repeat="data in bigbazardata track by $index">
              <div class="product">   
              <div class="productimage" >
-             <img ng-src="{{data.ProductImage}}"  data-toggle="modal" data-target="#exampleModalLong"> 
+             <img ng-src="{{data.ProductImage}}"  data-toggle="modal" data-target="#exampleModalLong"  ng-click="addmodal(data)"> 
 
 
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+
+              </div>
+              <div class="productdescription">
+                  <span class="productname">{{data.ProductName}}</span>
+                  <br>
+                  <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span>
+              </div>
+              
+              </div>
+              
+            </li>
+        </ul>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">{{data.ProductName}}</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">{{name.ProductName}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
        <div class="nextimage">
-           <img ng-src="{{data.ProductImage}}">
+           <img ng-src="{{modal.ProductImage}}"> <br><span class="unit">1-unit</span>
+            <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{modal.Price}}</span>
        </div>
        <div class="counter-cart">
            <span>Quantity</span>
@@ -36,18 +50,11 @@
       </div>
       <div class="modal-footer">
        
-        <button type="button" class="btn btn-primary" ng-click="total(count,data)" >Add To Cart</button>
+        <button type="button" class="btn btn-primary" ng-click="addtocart()" >Add To Cart</button>
       </div>
     </div>
   </div>
 </div> 
-
-              </div>
-              
-              </div>
-              
-            </li>
-        </ul>
     </div>
 </div>
 </div>
