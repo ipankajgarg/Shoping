@@ -1,0 +1,146 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#header{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+#header .logo{
+    width: 100%;
+    
+}
+#header .logo img{
+    width: 50%;
+        margin-top: -10px;
+}
+
+#header .logo span{
+        text-transform: capitalize;
+    color: red;
+    font-weight: 900;
+    font-size: 31px;
+    margin-left: -40px;
+}
+#header .logout_btn a{
+   color: white;
+    text-transform: capitalize;
+    background-color: 	rgb(255,69,0);
+    padding: 5px 13px;
+    border-radius: 6px; 
+    text-decoration: none;
+}
+#header .logout_btn{
+    margin-top: 20px
+}
+/*content*/
+#content{
+    margin-top: 100px;
+}
+
+#content .nav-button span{
+        font-size: 30px;
+    margin-left: 50px;
+    color: #0275d8;
+    cursor: pointer;
+}
+#content .userlist{
+    background-color: rgba(0,0,0,0.8);
+    width: 80%;
+    text-transform: capitalize;
+}
+ul{
+        padding: 0px;
+    margin: 0px;
+}
+ul li{
+    list-style: none;
+    
+}
+#content .userlist li:hover{
+    background-color: red;
+}
+#content .userlist li:first-child{
+    background-color: red;
+}
+#content .userlist li{
+    padding: 10px 0px;
+}
+#content .userlist ul li a{
+        color: white;
+    padding: 0px 0px;
+    /* width: 112%; */
+    display: block;
+    width: 100%;
+   
+padding-left: 40px;
+    font-size: 18px;
+    text-decoration: none;
+}
+#content .move{
+    transform: translateX(-200px);
+    transition: 1s;
+    
+}
+#content .userlist{
+    transform: translateX(200px;);
+        transition: 1s;
+    position: absolute;
+    width: 80%;
+    z-index: 5;
+}
+#content .delivery-option {
+    margin-top: 10px;
+}
+#content .delivery-option li{
+    display: inline-block;
+    padding-left: 30px;
+    text-transform: capitalize;
+}
+#content .delivery-option li a{
+    text-decoration: none;
+    font-weight: 600;
+}
+#content .cart-icon{
+    margin-top: 10px;
+
+}
+#content .cart-icon a{
+    color: white;
+    background-color: rgb(255,69,0);
+    padding: 4px 14px;
+    border-radius: 4px;
+}
+
+#content .storelist li{
+    display: block;
+    padding: 0px;
+  
+    
+}
+#content .storelist li a{
+    color: white;
+     padding: 10px 30px;
+    display: block;
+    font-size: 18px;
+}
+#content .storelist li:hover{
+    background-color: red;
+}
+#content .delivery-option li:nth-child(2){
+    position: relative;
+}
+#content .storelist{
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+      
+}
+#content .delivery-option .show{
+    display: block;
+    top: 37px;
+    z-index: 5;
+    
+}

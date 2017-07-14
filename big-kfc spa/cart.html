@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="assets/css/cart.css">
+    
+    
+    <script src="libs/angular.min.js"></script>
+    
+    <script src="js/cartmodule.js"></script>
+  
+    <script src="js/cartfactory.js"></script>
+   
+    <script src="js/cartcontroller.js"></script>
+</head>
+<body ng-app="cartapp" ng-controller="cartctrl">
+ <div id="container">
+     <header id="header">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-3">
+                       <div class="logo">
+                           <img src="images/logo.png" alt="image" >
+                           <span>halanx</span>
+                           
+                       </div>
+                       
+                   </div>
+<!--
+                  
+-->
+                       <div class="col-lg-1 offset-lg-8">
+                           <div class="logout_btn">
+                               <a href="">logout</a>
+                           </div>
+                       </div>
+
+               </div>
+           </div>
+       </header>
+       <div id="content">
+           <div class="container">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="myproducts">
+                           <ul>
+        <li ng-repeat="list in cartproductlist track by $index ">
+           <div class="product">
+           <div class="productimage">
+            <img ng-src="{{list.ProductImage}}">
+            </div>
+            <div class="productdescription">
+                <span>{{list.ProductName}}</span>
+                <br>
+                <span><i class="fa fa-inr" aria-hidden="true"></i>{{list.Price}}</span>
+                 <br>
+                  <button ng-click="updateminus(list)" ng-disabled="list.count==1" >-</button>
+            <input type="text" ng-model="list.count"   min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <button ng-click="updateplus(list)" ng-change="update()" ng-model="hello">+</button>
+            </div>
+          <div class="deleteimage">
+            <img src="images/close-icon.png" ng-click="deleteproduct(list)" >
+            </div>
+            </div>
+        </li>
+        
+    </ul> 
+                      </div>
+                  </div>
+                  <div class="col-sm-3 offset-sm-3">
+                    <div class="amount">
+                   
+        <h1>Your Amount</h1>
+        <span>total amount::{{totalamount}}</span>
+      
+        
+    </div>  
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form">
+                          <form  method="post" ng-submit="submitcart()" >
+                              <input type="submit" value="continue" >
+                          </form>
+                      </div>
+                  </div>
+              </div>
+               
+           </div>
+       </div>
+ </div>
+  
+
+    
+    
+</body>
+</html>
+
