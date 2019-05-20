@@ -4,7 +4,7 @@ app.factory("myfactory",($http,$q)=>{
             var pr = $q.defer()
             var url = ""
             console.log(obj)
-            $http.post(url,{obj}).then(function(data){
+            $http.post(url,{data:obj}).then(function(data){
                 pr.resolve(data.data)
                 console.log("success"),
                     function(err){
